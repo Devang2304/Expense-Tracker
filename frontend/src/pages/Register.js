@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Form,Input,message} from 'antd'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -32,10 +32,17 @@ const Register = () => {
             navigate('/login');
         } catch (error) {
             setLoading(false);
-            message.error("Invalid Username or Password");
+            message.error("User already exists");
         }
 
     }
+
+    useEffect(()=>{
+        if(localStorage.getItem('userName')){
+            navigate('/')
+        }
+    },[navigate])
+
   return (
     <>
     <div className='register-page'>

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Form,Input,message} from 'antd'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { loginUser } from '../api/api'
 import Spinner from '../components/Spinner'
-
+import '../styles/Loginpage.css'
 
 
 const Login = () => {
@@ -35,6 +35,11 @@ const Login = () => {
         }
 
     }
+    useEffect(()=>{
+        if(localStorage.getItem('userName')){
+            navigate('/')
+        }
+    },[navigate])
 
   return (
     <>

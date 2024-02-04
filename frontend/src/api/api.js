@@ -17,3 +17,37 @@ export const loginUser = async (data) =>{
         console.log('Error while login user', error);
     }
 }
+
+export const getAllTransactions = async (data) =>{
+    try {
+        return axios.post(`${URL}/get-transection`, data);
+    } catch (error) {
+        console.log('Error while get all transactions', error);
+    }
+}
+
+
+export const deleteTransaction = async (data) =>{
+    try {
+        return axios.post(`${URL}/delete-transection`, data);
+    } catch (error) {
+        console.log('Error while delete transaction', error);
+    }
+}
+
+
+export const editTransection =async (data)=>{
+    try {
+        return axios.post(`${URL}/edit-transection`, data);
+    } catch (error) {
+        console.log('Error while edit transaction', error);
+    }
+}
+
+export const addTransaction = async (data) =>{
+    try {
+        return axios.post(`${URL}/add-transection`, data);
+    } catch (error) {
+        console.log('Error while add transaction', error);
+    }
+}
