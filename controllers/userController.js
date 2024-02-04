@@ -26,7 +26,7 @@ export const registerUser = async (req,res)=>{
         if(newUser){
             res.status(200).json({
                 _id:newUser._id,
-                userName:newUser.userName,
+                userName:newUser.userName, 
                 token:generateToken(newUser._id)
             })
         }else{
