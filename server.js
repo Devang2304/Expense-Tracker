@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
+import transectionRoutes from './routes/transectionRoutes.js';
 import bodyParser from 'body-parser';
 
 
@@ -34,3 +35,4 @@ app.listen(PORT,()=>{
 //     }
 // })
 app.use('/',userRoutes);
+app.use("/",transectionRoutes);
