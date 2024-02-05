@@ -16,22 +16,8 @@ const App = () => {
             </ProtectedRoutes>
           }
         />
-        <Route
-          path="/register"
-          element={
-            <ProtectedRoutes>
-              <Register />
-            </ProtectedRoutes>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <ProtectedRoutes>
-              <Login />
-            </ProtectedRoutes>
-          }
-        />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
@@ -39,10 +25,12 @@ const App = () => {
 
 export function ProtectedRoutes(props) {
   const userName = localStorage.getItem("userName");
+  const isLoginPage = window.location.pathname === "/login";
+
   if (userName) {
     return props.children;
   } else {
-    if (window.location.pathname !== "/login") {
+    if (!isLoginPage) {
       return <Navigate to="/login" />;
     } else {
       return props.children;

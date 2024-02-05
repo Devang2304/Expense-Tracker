@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { registerUser } from '../api/api'
 import Spinner from '../components/Spinner'
+import '../styles/Registerpage.css'
 
 
 
